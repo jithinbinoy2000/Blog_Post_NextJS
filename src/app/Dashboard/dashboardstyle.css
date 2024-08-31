@@ -1,0 +1,53 @@
+/* Dashboard Css */
+.blog-container {
+    position: relative; /* Set position */
+    overflow: hidden; /* Hide overflow */
+    transition: transform 0.5s ease-out, background-color 0.5s ease-out, box-shadow 0.5s ease-out; /* Smooth transitions */
+    transform-origin: top; /* Pivot top */
+}
+
+.blog-container:hover {
+    transform: scale(1.05); /* Scale on hover */
+    background-color: rgba(236, 236, 236, 0.247); /* Hover background */
+    box-shadow: 9px 17px 45px -29px rgba(0, 0, 0, 0.44); /* Hover shadow */
+}
+
+.blog-container::after {
+    content: ""; /* Create overlay */
+    position: absolute; /* Absolute position */
+    top: 0; /* Align top */
+    left: 0; /* Align left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent); /* Gradient effect */
+    transform: translateX(-100%); /* Initial position */
+    transition: transform 0.8s; /* Smooth transition */
+    display: none; /* Hide initially */
+}
+
+.loading .blog-container::after {
+    display: block; /* Show during load */
+    animation: loading 0.8s infinite; /* Loading animation */
+}
+
+
+@keyframes loading {
+    100% {
+        transform: translateX(120%); /* Move overlay */
+    }
+}
+
+@keyframes fadeInBend {
+    0% { 
+        opacity: 0; /* Start hidden */
+        transform: rotateX(-90deg) translateY(-40px); /* Initial bend */
+    }
+    100% { 
+        opacity: 1; /* Fully visible */
+        transform: rotateX(0deg) translateY(0); /* Straighten */
+    }
+}
+
+.blog-container.loaded {
+    animation: fadeInBend 0.5s ease-out; /* Load animation */
+}
