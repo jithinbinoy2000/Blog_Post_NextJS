@@ -82,7 +82,7 @@ export default function View({ params }) {
 
         {/* Highlighted Quote from the Blog */}
         <blockquote className="text-lg italic font-semibold text-gray-200 border-l-4 border-purple-500 pl-4 mb-4">
-          "{blogItem[0]?.quote}"
+          &quot;{blogItem[0]?.quote}&quot;
         </blockquote>
 
         {/* Blog Stats: Total Reads and Likes */}
