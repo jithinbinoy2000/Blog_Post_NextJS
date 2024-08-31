@@ -43,6 +43,7 @@ export default function View({ params }) {
           width={50}
           height={100}
           className="mx-2 animate-pulse"
+          alt="loading"
         />
         <span className="text-xl font-medium">Loading...</span>
       </div>
@@ -58,6 +59,7 @@ export default function View({ params }) {
             src="/images/left-arrow.png"
             width={20}
             height={100}
+            alt="button"
             className="my-3 hover:w-[30px] duration-300"
           />
         </Link>
